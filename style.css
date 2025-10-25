@@ -18,6 +18,7 @@ main {
   flex-direction: row;
   padding: 20px;
   gap: 20px;
+  position: relative;
 }
 
 .input-section {
@@ -72,34 +73,51 @@ main {
   border-bottom: 1px solid #eee;
 }
 
-.prompt-panel {
-  margin-top: 20px;
-}
-
-.prompt-panel button {
-  display: block;
-  width: 100%;
-  margin: 5px 0;
-  background: #ff7f50;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-}
-
-.prompt-panel button:hover {
-  background: #e0693f;
-}
-
-.copied-msg {
-  margin-top: 5px;
-  font-weight: bold;
-  color: green;
-}
-
 .upload-panel {
   margin-top: 20px;
 }
 
 .upload-panel input {
   padding: 5px;
+}
+
+/* Panel prompts flottant */
+.prompt-floating {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  background: #ff7f50;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.prompt-floating button {
+  background: white;
+  color: #ff7f50;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.prompt-floating button:hover {
+  background: #ffe3d6;
+}
+
+.copied-msg {
+  position: fixed;
+  top: 70px;
+  right: 30px;
+  font-weight: bold;
+  color: green;
+  background: #e0ffe0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
