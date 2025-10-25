@@ -1,10 +1,12 @@
-// --- Récupérer les éléments ---
+// --- Elements ---
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const archiveBtn = document.getElementById("archiveBtn");
 const tasksContainer = document.getElementById("tasksContainer");
+const promptsContainer = document.getElementById("promptsContainer");
+const copiedMsg = document.getElementById("copiedMsg");
 
-// --- Charger les tâches depuis localStorage ---
+// --- Tâches stockées localement ---
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // --- Fonction pour afficher les tâches ---
@@ -46,6 +48,25 @@ archiveBtn.addEventListener("click", () => {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 });
+
+// --- Charger les prompts depuis prompts.json ---
+fetch("prompts.json")
+  .then(response => response.json())
+  .then(prompts => {
+    prompts.forEach(p => {
+      const btn = document.createElement("button");
+      btn.textContent = p.label;
+      btn.addEventListener("click", () => {
+        const combined = p.text + "\n\n" + tasks.map(t => "- " + t.text).join("\n");
+        navigator.clipboard.writeText(combined)
+          .then(() => {
+            copiedMsg.style.display = "block";
+            setTimeout(() => copiedMsg.style.display = "none", 2000);
+          });
+      });
+      promptsContainer.appendChild(btn);
+    });
+  });
 
 // --- Initial render ---
 renderTasks();
