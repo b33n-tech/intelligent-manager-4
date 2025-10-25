@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collecteur de tâches brutes</title>
+  <title>Mini Dashboard Tâches</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🧠 Collecteur de tâches brutes</h1>
-    <p>Ajoute tes tâches librement. Tout est sauvegardé localement.</p>
+    <h1>🧠 Mini Dashboard Tâches</h1>
+    <p>Ajoute, archive, copie et retrace l’histoire de tes tâches.</p>
   </header>
 
   <main>
@@ -25,10 +25,15 @@
         <div id="promptsContainer"></div>
         <div id="copiedMsg" class="copied-msg" style="display:none;">✅ Copié dans le presse-papier !</div>
       </div>
+
+      <div class="upload-panel">
+        <h2>📂 Upload JSON</h2>
+        <input type="file" id="uploadJson" multiple accept=".json">
+      </div>
     </section>
 
     <aside class="task-list">
-      <h2>📝 Liste actuelle</h2>
+      <h2>📝 Historique des tâches</h2>
       <ul id="tasksContainer"></ul>
     </aside>
   </main>
