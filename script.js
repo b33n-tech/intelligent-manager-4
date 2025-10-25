@@ -49,24 +49,39 @@ archiveBtn.addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-// --- Charger les prompts depuis prompts.json ---
-fetch("prompts.json")
-  .then(response => response.json())
-  .then(prompts => {
-    prompts.forEach(p => {
-      const btn = document.createElement("button");
-      btn.textContent = p.label;
-      btn.addEventListener("click", () => {
-        const combined = p.text + "\n\n" + tasks.map(t => "- " + t.text).join("\n");
-        navigator.clipboard.writeText(combined)
-          .then(() => {
-            copiedMsg.style.display = "block";
-            setTimeout(() => copiedMsg.style.display = "none", 2000);
-          });
+// --- Prompts intégrés directement ---
+const prompts = [
+  {
+    id: "planifier",
+    label: "Créer un plan",
+    text: "Transforme ces tâches en plan structuré étape par étape :"
+  },
+  {
+    id: "prioriser",
+    label: "Prioriser",
+    text: "Classe ces tâches par ordre de priorité et urgence :"
+  },
+  {
+    id: "categoriser",
+    label: "Catégoriser",
+    text: "Range ces tâches dans des catégories logiques :"
+  }
+];
+
+// --- Création des boutons prompts ---
+prompts.forEach(p => {
+  const btn = document.createElement("button");
+  btn.textContent = p.label;
+  btn.addEventListener("click", () => {
+    const combined = p.text + "\n\n" + tasks.map(t => "- " + t.text).join("\n");
+    navigator.clipboard.writeText(combined)
+      .then(() => {
+        copiedMsg.style.display = "block";
+        setTimeout(() => copiedMsg.style.display = "none", 2000);
       });
-      promptsContainer.appendChild(btn);
-    });
   });
+  promptsContainer.appendChild(btn);
+});
 
 // --- Initial render ---
 renderTasks();
