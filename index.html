@@ -20,12 +20,6 @@
         <button id="archiveBtn">📦 Archiver</button>
       </div>
 
-      <div class="prompt-panel">
-        <h2>⚡ Prompts</h2>
-        <div id="promptsContainer"></div>
-        <div id="copiedMsg" class="copied-msg" style="display:none;">✅ Copié dans le presse-papier !</div>
-      </div>
-
       <div class="upload-panel">
         <h2>📂 Upload JSON</h2>
         <input type="file" id="uploadJson" multiple accept=".json">
@@ -36,6 +30,10 @@
       <h2>📝 Historique des tâches</h2>
       <ul id="tasksContainer"></ul>
     </aside>
+
+    <!-- Panel prompts flottant -->
+    <div class="prompt-floating" id="promptsContainer"></div>
+    <div id="copiedMsg" class="copied-msg" style="display:none;">✅ Copié !</div>
   </main>
 
   <script src="script.js"></script>
