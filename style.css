@@ -32,6 +32,11 @@ main {
   font-size: 1rem;
 }
 
+.buttons-row {
+  display: flex;
+  gap: 10px;
+}
+
 .input-section button {
   padding: 10px;
   font-size: 1rem;
@@ -40,6 +45,7 @@ main {
   background: #4a90e2;
   color: white;
   border-radius: 5px;
+  flex: 1;
 }
 
 .input-section button:hover {
@@ -75,6 +81,9 @@ main {
   width: 100%;
   margin: 5px 0;
   background: #ff7f50;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
 }
 
 .prompt-panel button:hover {
