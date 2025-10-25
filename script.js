@@ -60,10 +60,14 @@ prompts.forEach(p=>{
   const btn = document.createElement("button");
   btn.textContent = p.label; // label court
   btn.addEventListener("click", ()=>{
+    // Copier prompt + tâches
     const combined = p.text + "\n\n" + tasks.map(t=>"- "+t.text).join("\n");
     navigator.clipboard.writeText(combined).then(()=>{
       copiedMsg.style.display="block";
       setTimeout(()=>copiedMsg.style.display="none",2000);
+      
+      // Ouvrir ChatGPT dans un nouvel onglet
+      window.open("https://chatgpt.com/", "_blank");
     });
   });
   promptsContainer.appendChild(btn);
