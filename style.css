@@ -59,10 +59,10 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-height: 80vh;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow-y: auto;
 }
 
 .task-list ul {
@@ -84,26 +84,25 @@ main {
   padding: 5px;
 }
 
+/* Panel Prompts en haut de la sidebar */
 .prompt-panel {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .prompt-panel button {
-  padding: 8px;
-  font-size: 0.9rem;
+  padding: 10px;
+  font-size: 1rem;
   cursor: pointer;
   border: none;
-  background: #ff7f50;
+  background: #4a90e2; /* uniforme avec les autres boutons */
   color: white;
   border-radius: 5px;
-  font-weight: bold;
 }
 
 .prompt-panel button:hover {
-  background: #e0693f;
+  background: #357ABD;
 }
 
 .copied-msg {
