@@ -24,7 +24,7 @@ main {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .input-section input {
@@ -64,4 +64,25 @@ main {
 .task-list li {
   padding: 8px;
   border-bottom: 1px solid #eee;
+}
+
+.prompt-panel {
+  margin-top: 20px;
+}
+
+.prompt-panel button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  background: #ff7f50;
+}
+
+.prompt-panel button:hover {
+  background: #e0693f;
+}
+
+.copied-msg {
+  margin-top: 5px;
+  font-weight: bold;
+  color: green;
 }
