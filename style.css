@@ -84,25 +84,30 @@ main {
   padding: 5px;
 }
 
-/* Panel Prompts en haut de la sidebar */
+/* Panel Prompts : centré, orange, rectangles */
 .prompt-panel {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* centrer boutons */
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .prompt-panel button {
-  padding: 10px;
-  font-size: 1rem;
+  width: 200px;
+  padding: 12px;
+  font-size: 1.1rem;
   cursor: pointer;
   border: none;
-  background: #4a90e2; /* uniforme avec les autres boutons */
+  background: #ff7f50; /* orange vif */
   color: white;
   border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .prompt-panel button:hover {
-  background: #357ABD;
+  background: #e0693f; /* hover plus foncé */
 }
 
 .copied-msg {
