@@ -1,17 +1,1 @@
-[
-  {
-    "id": "planifier",
-    "label": "Créer un plan",
-    "text": "Transforme ces tâches en plan structuré étape par étape :"
-  },
-  {
-    "id": "prioriser",
-    "label": "Prioriser",
-    "text": "Classe ces tâches par ordre de priorité et urgence :"
-  },
-  {
-    "id": "categoriser",
-    "label": "Catégoriser",
-    "text": "Range ces tâches dans des catégories logiques :"
-  }
-]
+
